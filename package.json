@@ -1,0 +1,28 @@
+{
+  "publish": false,
+  "name": "iet-ou-sites-checker",
+  "version": "1.0.0",
+  "description": "... | © Nick Freear, 21-May-2018.",
+  "license": "NOLICENSE",
+  "repository": "https://github.com/nfreear/iet-sites-checker",
+  "dependencies": {
+    "check-broken-links": "^2.0.3",
+    "live-server": "^1.2.0",
+    "markdown-link-check": "^3.4.0",
+    "request": "^2.87.0"
+  },
+  "peerDependencies": {
+    "brkn-cli": "^1.0.4",
+    "otu": "^1.1.0-beta",
+    "sitemap-checker": "^1.0.2"
+  },
+  "x-sitemap-json": "http://127.0.0.1:9001/test/sitemap.json",
+  "x-sitemap-md": "http://127.0.0.1:9001/test/sitemap.md",
+  "x-otu-script": [],
+  "scripts": {
+    "start": "live-server --port=9001",
+    "test": "verbose=true gettimeout=120 node index.js",
+    "md": "http_proxy=http://wwwcache.open.ac.uk:80 markdown-link-check http://127.0.0.1:9001/test/sitemap.md",
+    "lsof": "lsof -i4 | grep LISTEN"
+  }
+}
